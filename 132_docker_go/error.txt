@@ -1,0 +1,14 @@
+../../../../../pkg/mod/github.com/docker/docker@v20.10.7+incompatible/errdefs/http_helpers.go:7:2: no required module provides package github.com/containerd/containerd/errdefs; to add it:
+	go get github.com/containerd/containerd/errdefs
+../../../../../pkg/mod/github.com/docker/docker@v20.10.7+incompatible/client/container_create.go:8:2: no required module provides package github.com/containerd/containerd/platforms; to add it:
+	go get github.com/containerd/containerd/platforms
+../../../../../pkg/mod/github.com/docker/docker@v20.10.7+incompatible/client/container_commit.go:9:2: no required module provides package github.com/docker/distribution/reference; to add it:
+	go get github.com/docker/distribution/reference
+../../../../../pkg/mod/github.com/docker/docker@v20.10.7+incompatible/errdefs/http_helpers.go:8:2: no required module provides package github.com/docker/distribution/registry/api/errcode; to add it:
+	go get github.com/docker/distribution/registry/api/errcode
+../../../../../pkg/mod/github.com/docker/docker@v20.10.7+incompatible/errdefs/http_helpers.go:9:2: no required module provides package github.com/sirupsen/logrus; to add it:
+	go get github.com/sirupsen/logrus
+../../../../../pkg/mod/github.com/docker/docker@v20.10.7+incompatible/errdefs/http_helpers.go:10:2: no required module provides package google.golang.org/grpc/codes; to add it:
+	go get google.golang.org/grpc/codes
+../../../../../pkg/mod/github.com/docker/docker@v20.10.7+incompatible/errdefs/http_helpers.go:11:2: no required module provides package google.golang.org/grpc/status; to add it:
+	go get google.golang.org/grpc/status

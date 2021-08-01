@@ -1,0 +1,7 @@
+item1:
+  k1:
+    - true
+    - false
+  k2:
+    - my_value
+    - their_value
