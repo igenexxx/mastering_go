@@ -6,12 +6,11 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"sync"
 )
 
 var numberOfPhrases int
 
-func readLineByLine(file string, c chan<- string, wg *sync.WaitGroup) {
+func readLineByLine(file string, c chan<- string) {
 	f, err := os.Open(file)
 	if err != nil {
 		close(c)
@@ -20,7 +19,7 @@ func readLineByLine(file string, c chan<- string, wg *sync.WaitGroup) {
 
 	r := bufio.NewScanner(f)
 	for r.Scan() {
-		wg.Add(1)
+		fmt.Println(r.Text())
 		c <- r.Text()
 	}
 
@@ -31,12 +30,9 @@ func readLineByLine(file string, c chan<- string, wg *sync.WaitGroup) {
 	close(c)
 }
 
-func phraseCounter(phrase string, in <-chan string, wg *sync.WaitGroup) {
+func phraseCounter(phrase string, in <-chan string) {
 	for line := range in {
-		if strings.Contains(strings.ToLower(line), strings.ToLower(phrase)) {
-			numberOfPhrases++
-		}
-		wg.Done()
+		numberOfPhrases += strings.Count(strings.ToLower(line), strings.ToLower(phrase))
 	}
 }
 
@@ -46,12 +42,11 @@ func main() {
 		fmt.Printf("usage: byLine <file1> [<file2> ...]\n")
 		return
 	}
-	var waitGroup sync.WaitGroup
 
 	for _, file := range flag.Args() {
 		fileChan := make(chan string)
-		go readLineByLine(file, fileChan, &waitGroup)
-		phraseCounter("qua", fileChan, &waitGroup)
+		go readLineByLine(file, fileChan)
+		phraseCounter("qua", fileChan)
 	}
 
 	fmt.Println("Phrase is faced", numberOfPhrases, "times")

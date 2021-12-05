@@ -11,4 +11,5 @@ func main() {
 	fmt.Println("Using Go version", runtime.Version())
 	fmt.Println("Number of CPUs:", runtime.NumCPU())
 	fmt.Println("Number of Goroutines:", runtime.NumGoroutine())
+
 }

@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	const (
@@ -23,4 +25,13 @@ func main() {
 	}
 
 	fmt.Println(testMap)
+
+	const (
+		a_4 = iota << 4
+		b_4
+		c_4
+		d_4
+	)
+
+	fmt.Println(a_4, b_4, c_4, d_4)
 }

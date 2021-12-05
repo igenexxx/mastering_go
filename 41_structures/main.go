@@ -19,6 +19,10 @@ func main() {
 	fmt.Println(s1.Y, s1.Z)
 
 	p1 := XYZ{23, 12, -2}
+	p3 := XYZ{23, 12, -2}
+
+	fmt.Println(p1 == p3)
+
 	p2 := XYZ{Z: 12, Y: 13}
 	fmt.Println(p1, p2)
 

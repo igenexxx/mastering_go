@@ -48,4 +48,26 @@ func main() {
 	fmt.Println("2^2:", p2_2)
 	fmt.Println("2^4:", p2_4)
 	fmt.Println("2^6:", p2_6)
+
+	const (
+		a1 int = iota % (4)
+		a2
+		a3
+		a4
+		a5
+		a6
+		a7
+		a8
+		a9
+	)
+
+	fmt.Println("a1:", a1)
+	fmt.Println("a2:", a2)
+	fmt.Println("a3:", a3)
+	fmt.Println("a4:", a4)
+	fmt.Println("a5:", a5)
+	fmt.Println("a6:", a6)
+	fmt.Println("a7:", a7)
+	fmt.Println("a8:", a8)
+	fmt.Println("a9:", a9)
 }
